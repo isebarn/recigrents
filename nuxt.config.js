@@ -1,3 +1,4 @@
+require('dotenv').config()
 import colors from 'vuetify/es5/util/colors'
 
 export default {
@@ -43,6 +44,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    'yamlful-nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
@@ -53,6 +55,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: process.env.AXIOS_BASE_URL
   },
   /*
   ** vuetify module configuration

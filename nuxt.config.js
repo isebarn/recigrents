@@ -31,6 +31,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/users/users.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -38,7 +39,8 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/auth'
   ],
   /*
   ** Nuxt.js modules
@@ -48,7 +50,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/auth',
   ],
   /*
   ** Axios module configuration
@@ -56,6 +59,18 @@ export default {
   */
   axios: {
     baseURL: process.env.AXIOS_BASE_URL
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'Users/authenticate', method: 'post', propertyName: 'token' },
+          user: { url: 'Users', method: 'get', propertyName: null },
+          logout: false,
+        }
+      }
+    }
   },
   /*
   ** vuetify module configuration

@@ -15,6 +15,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "nuxt": "^2.0.0",
+    "vuex-map-fields": "^1.4.0",
     "yamlful-nuxt": "^0.4.2"
   },
   "devDependencies": {

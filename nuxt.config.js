@@ -63,13 +63,6 @@ export default {
 
   auth: {
     strategies: {
-      local: {
-        endpoints: {
-          login: { url: 'users/authenticate', method: 'post', propertyName: 'token' },
-          user: { url: 'users', method: 'get', propertyName: null },
-          logout: false,
-        }
-      }
     }
   },
   /*

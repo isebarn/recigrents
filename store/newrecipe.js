@@ -17,33 +17,11 @@ export const state = () => ({
     }
   },
   recipe: {
-    name: 'Devil Chicken',
-    description: 'Very tasty',
-    ingredients: [
-      {
-        ingredientTypeId: 1,
-        measurement: {
-          amount: '1',
-          measurementTypeId: 1
-        }
-      }
-    ],
-    instructions: [
-      {
-        name: 'Cut chicken',
-        description: 'Thin strips'
-      },
-      {
-        name: 'Bake 20 minutes at 200',
-        description: ''
-      }
-    ]
-    /*    name: '',
+    name: '',
     description: '',
     ingredients: [],
-    instructions: [] */
+    instructions: []
   }
-
 })
 
 export const mutations = {

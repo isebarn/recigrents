@@ -1,36 +1,27 @@
 <template>
-  <v-container>
-    <v-layout row>
-      <v-card id="heh" @click="clickCard($event)">
-        <v-row>
-          <v-col cols="4">
-            <v-avatar
-              id="mynd"
-              class="ma-3"
-              size="125"
-              tile
-            >
-              <v-img :src="recipe.imageURL" />
-            </v-avatar>
-          </v-col>
-          <v-col cols="8">
-            <v-container>
-              <p id="fagot" class="headline text-wrap">
-                {{ recipe.name }}
-              </p>
-              <v-card-actions>
-                <v-spacer />
-                <v-btn id="btn" icon>
-                  <v-icon id="addToShoppingListIcon" @click="addRecipeToShoppingList(recipe)">
-                    mdi-cart-plus
-                  </v-icon>
-                </v-btn>
-              </v-card-actions>
-            </v-container>
-          </v-col>
-        </v-row>
-      </v-card>
-    </v-layout>
+  <v-container pa-0 fluid>
+    <v-row align="start" justify="center">
+      <v-col>
+        <v-card :color="colors[index%4]" @click="clickCard($event)">
+          <v-img v-if="recipe.image" :src="recipe.imageURL" height="125px" gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)" class="white--text align-end">
+            <v-card-title class="headline">
+              {{ recipe.name }}
+            </v-card-title>
+          </v-img>
+          <v-card-title v-else class="headline align-end" style="padding-left: 4px; height: 125px; color: #1F5362">
+            {{ recipe.name }}
+          </v-card-title>
+          <v-card-actions style="background-color: white">
+            <v-spacer />
+            <v-btn id="btn" icon>
+              <v-icon id="addToShoppingListIcon" @click="addRecipeToShoppingList(recipe)">
+                mdi-cart-plus
+              </v-icon>
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -38,7 +29,19 @@
 import { mapActions } from 'vuex'
 export default {
   props: {
-    recipe: { type: Object, required: true }
+    recipe: { type: Object, required: true },
+    index: { type: Number, required: true }
+  },
+
+  data () {
+    return {
+      colors: [
+        '#D9E7F4',
+        '#F0E1EB',
+        '#FBE6E8',
+        '#FAE3D7'
+      ]
+    }
   },
 
   methods: {
@@ -54,12 +57,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-  .col {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-
-</style>

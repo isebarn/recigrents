@@ -5,7 +5,7 @@
         <v-card v-if="refsLoaded">
           <v-img
             v-if="recipe.image"
-            :src="recipe.image"
+            :src="recipe.imageURL"
             :width="width"
           />
           <v-card-title primary-title>

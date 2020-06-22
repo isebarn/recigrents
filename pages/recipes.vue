@@ -1,12 +1,6 @@
 <template>
-  <v-container fluid>
-    <v-row
-      v-for="recipe in recipes"
-      :key="recipe.id"
-      align="start"
-    >
-      <RecipePreview :recipe="recipe" />
-    </v-row>
+  <v-container pa-0>
+    <RecipePreview v-for="(recipe, index) in recipes" :key="recipe.id" :recipe="recipe" :index="index" />
   </v-container>
 </template>
 
@@ -17,7 +11,7 @@ import { mapActions } from 'vuex'
 import RecipePreview from '~/components/recipes/RecipePreview.vue'
 export default {
 
-  layout: 'mobile',
+  layout: 'mobile_recipes',
 
   components: {
     RecipePreview

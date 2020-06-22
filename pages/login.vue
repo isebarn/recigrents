@@ -17,7 +17,8 @@
 
 import FBLogin from '~/components/facebookUser/Login'
 export default {
-  layout: 'mobile',
+  layout: 'mobile_login',
+
   middleware: 'facebookUser',
   components: {
     FBLogin

@@ -11,7 +11,7 @@ a.fb {
     font-size: 17px;
     padding: 13px 30px 15px 44px;
     background: #3A5A97;
-    color: #fff;
+    color: #fff !important;
     text-shadow: 0 -1px 0 rgba(0,0,20,.4);
     text-decoration: none;
     line-height: 1;

@@ -10,7 +10,7 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-text-field v-model="amount" label="Amount" />
+        <v-text-field v-model="amount" label="Amount" autocomplete="off" />
       </v-col>
       <v-col cols="8">
         <MeasurementTypeSelect />

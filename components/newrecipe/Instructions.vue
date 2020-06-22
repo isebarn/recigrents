@@ -8,6 +8,7 @@
         <v-text-field
           id="id"
           v-model="name"
+          autocomplete="off"
           label="Step"
         />
       </v-col>

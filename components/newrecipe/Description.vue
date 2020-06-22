@@ -1,16 +1,23 @@
 <template>
-  <v-layout pl-4 py-0 my-0>
-    <v-container>
-      <v-text-field
-        v-model="name"
-        label="Recipe name"
-      />
-      <v-textarea
-        v-model="description"
-        label="Description"
-      />
-    </v-container>
-  </v-layout>
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-text-field
+          v-model="name"
+          autocomplete="off"
+          label="Recipe name"
+        />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-textarea
+          v-model="description"
+          label="Description"
+        />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

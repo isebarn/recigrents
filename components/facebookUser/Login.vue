@@ -1,7 +1,7 @@
 <template>
-  <v-layout row wrap>
+  <v-container fluid>
     <a class="fb connect" @click="$auth.loginWith('facebook')">Continue with Facebook</a>
-  </v-layout>
+  </v-container>
 </template>
 
 <style>

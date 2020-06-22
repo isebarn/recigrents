@@ -31,6 +31,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/users/users.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -62,6 +63,13 @@ export default {
 
   auth: {
     strategies: {
+      emailUser: {
+        _scheme: 'local',
+        endpoints: {
+          login: { url: 'emailUser/authenticate', method: 'post', propertyName: 'token'},
+          user: { url: 'emailUser', method: 'get', propertyName: null },
+        }
+      },
       facebookUser: {
         _scheme: 'local',
         endpoints: {
